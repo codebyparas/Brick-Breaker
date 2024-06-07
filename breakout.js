@@ -22,6 +22,6 @@ window.onload = function(){
     context = board.getContext("2d");  // Used for Drawing on the Board
 
     // Draw Initial Player
-    context.fillStyle = "skyblue";
+    context.fillStyle = "lightgreen";
     context.fillRect(player.x, player.y, player.width, player.height);
 }
