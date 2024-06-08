@@ -24,4 +24,14 @@ window.onload = function(){
     // Draw Initial Player
     context.fillStyle = "lightgreen";
     context.fillRect(player.x, player.y, player.width, player.height);
+
+    requestAnimationFrame(update);
+}
+
+function update(){
+    requestAnimationFrame(update);
+
+    // Player
+    context.fillStyle = "lightgreen";
+    context.fillRect(player.x, player.y, player.width, player.height);
 }
