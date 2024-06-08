@@ -42,5 +42,7 @@ function update(){
 function movePlayer(e){
     if(e.code == "ArrowLeft"){
         player.x -= player.velocityX;
+    }else if(e.code == "ArrowRight"){
+        player.x += player.velocityX;
     }
 }
