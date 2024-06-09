@@ -94,3 +94,19 @@ function detectCollision(a, b){
             a.y < b.y + b.height &&  // a's Top Left Corner doesn't Reach b's Bottom Left Corner
             a.y + a.height > b.y;  // a's Bottom Left Corner Passes b's Top Left Corner
 }
+
+function topCollision(ball, block){  // a is Above b (Ball is Above Block)
+    return detectCollision(ball, block) && (ball.y + ball.height) >= block.y;
+}
+
+function bottomCollision(ball, block){  // a is Below b (Ball is Below Block)
+    return detectCollision(ball, block) && (ball.y + block.height) >= ball.y;
+}
+
+function leftCollision(ball, block){  // a is Left of b (Ball is Left of Block)
+    return detectCollision(ball, block) && (ball.x + ball.width) >= block.x;
+}
+
+function rightCollision(ball, block){  // a is Right of b (Ball is Right of Block)
+    return detectCollision(ball, block) && (block.x + block.width) >= ball.x;
+}
