@@ -87,3 +87,10 @@ function movePlayer(e){
         }
     }
 }
+
+function detectCollision(a, b){
+    return  a.x < b.x + b.width &&  // a's Top Left Corner doesn't Reach b's Top Right Corner
+            a.x + a.width > b.x &&  // a's Top Right Corner Passes b's Top Left Corner
+            a.y < b.y + b.height &&  // a's Top Left Corner doesn't Reach b's Bottom Left Corner
+            a.y + a.height > b.y;  // a's Bottom Left Corner Passes b's Top Left Corner
+}
