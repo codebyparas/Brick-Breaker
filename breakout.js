@@ -51,6 +51,10 @@ function movePlayer(e){
             player.x = nextPlayerX;
         }
     }else if(e.code == "ArrowRight"){
-        player.x += player.velocityX;
+        // player.x += player.velocityX;
+        let nextPlayerX = player.x + player.velocityX;
+        if(!outOfBounds(nextPlayerX)){
+            player.x = nextPlayerX;
+        }
     }
 }
