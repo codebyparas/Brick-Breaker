@@ -32,6 +32,19 @@ let ball = {
     velocityY : ballVelocityY
 }
 
+// Blocks
+let blockArray = [];
+let blockWidth = 50;
+let blockHeight = 10;
+let blockColumns = 8;
+let blockRows = 3;  // Add More As Game Goes On
+let blockMaxRows = 10;  // Limit How Many Rows
+let blockCount = 0;
+
+// Starting Block Corner Top Left
+let blockX = 15;
+let blockY = 45;
+
 window.onload = function(){
     board = document.getElementById("board");
     board.height = boardHeight;
