@@ -90,6 +90,15 @@ function update(){
     }else if(leftCollision(ball, player) || rightCollision(ball, player)){
         ball.velocityX *= -1;  // Flip X Direction Up or Down
     }
+
+    // Blocks
+    context.fillStyle = "skyblue";
+    for(let i = 0; i < blockArray.length; i++){
+        let block = blockArray[i];
+        if(!block.break){
+            context.fillRect(block.x, block.y, block.width, block.height);
+        }
+    }
 }
 
 function outOfBounds(xPosition){
