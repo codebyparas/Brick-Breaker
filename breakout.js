@@ -148,8 +148,8 @@ function createBlocks(){
     for(let c = 0; c < blockColumns; c++){
         for(let r = 0; r < blockRows; r++){
             let block = {
-                x : blockX + c*blockWidth,
-                y : blockY + r*blockHeight,
+                x : blockX + c*blockWidth + c*10,  // c*10 Space 10 Pixels Apart Columns
+                y : blockY + r*blockHeight + r*10,  // r*10 Space 10 Pixels Apart Rows
                 width : blockWidth,
                 height : blockHeight,
                 break : false
