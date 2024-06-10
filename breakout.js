@@ -57,6 +57,9 @@ window.onload = function(){
 
     requestAnimationFrame(update);
     document.addEventListener("keydown", movePlayer);
+
+    // Create Blocks
+    createBlocks();
 }
 
 function update(){
@@ -129,4 +132,21 @@ function leftCollision(ball, block){  // a is Left of b (Ball is Left of Block)
 
 function rightCollision(ball, block){  // a is Right of b (Ball is Right of Block)
     return detectCollision(ball, block) && (block.x + block.width) >= ball.x;
+}
+
+function createBlocks(){
+    blockArray = [];  // Clear Array
+    for(let c = 0; c < blockColumns; c++){
+        for(let r = 0; r < blockRows; r++){
+            let block = {
+                x : blockX + c*blockWidth,
+                y : blockY + r*blockHeight,
+                width : blockWidth,
+                height : blockHeight,
+                break : false
+            }
+            blockArray.push(block);
+        }
+    }
+    blockCount = blockArray.length;
 }
