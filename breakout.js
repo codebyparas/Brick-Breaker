@@ -67,6 +67,13 @@ function update(){
         // If Ball Touches Left or Right of Canvas
         ball.velocityX *= -1;
     }
+
+    // Bounce the Ball off Player Paddle
+    if(topCollision(ball, player) || bottomCollision(ball, player)){
+        ball.velocityY *= -1;   // Flip Y Direction Up or Down
+    }else if(leftCollision(ball, player) || rightCollision(ball, player)){
+        ball.velocityX *= -1;  // Flip X Direction Up or Down
+    }
 }
 
 function outOfBounds(xPosition){
