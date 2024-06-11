@@ -112,6 +112,10 @@ function update(){
             context.fillRect(block.x, block.y, block.width, block.height);
         }
     }
+
+    // Score
+    context.font = "20px sans-serif";
+    context.fillText(score, 10, 25);
 }
 
 function outOfBounds(xPosition){
