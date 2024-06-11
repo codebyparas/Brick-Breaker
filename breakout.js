@@ -46,6 +46,7 @@ let blockX = 15;
 let blockY = 45;
 
 let score = 0;
+let gameOver = false;
 
 window.onload = function(){
     board = document.getElementById("board");
@@ -66,6 +67,9 @@ window.onload = function(){
 
 function update(){
     requestAnimationFrame(update);
+    if(gameOver){
+        return;
+    }
     context.clearRect(0, 0, board.width, board.height);
 
     // Player
@@ -84,6 +88,12 @@ function update(){
     }else if(ball.x <= 0 || (ball.x + ball.width) >= boardWidth){
         // If Ball Touches Left or Right of Canvas
         ball.velocityX *= -1;
+    }else if(ball.y + ball.height >= boardHeight){
+        // If Ball Touches Bottom of Canvas
+        // Game Over
+        context.font = "20px sans-serif";
+        context.fillText("Game Over: Press 'Space'  to Restart", 80, 400);
+        gameOver = true;
     }
 
     // Bounce the Ball off Player Paddle
