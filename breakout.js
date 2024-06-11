@@ -45,6 +45,8 @@ let blockCount = 0;
 let blockX = 15;
 let blockY = 45;
 
+let score = 0;
+
 window.onload = function(){
     board = document.getElementById("board");
     board.height = boardHeight;
@@ -99,11 +101,13 @@ function update(){
             if(topCollision(ball, block) || bottomCollision(ball, block)){
                block.break = true;
                ball.velocityY *= -1;  // Flip Y Direction Up or Down
-               blockCount -= 1; 
+               blockCount -= 1;
+               score += 100;
             }else if(leftCollision(ball, block) || rightCollision(ball, block)){
                 block.break = true;
                 ball.velocityX *= -1;  // Flip X Direction Left or Right
                 blockCount -= 1;
+                score += 100;
             }
             context.fillRect(block.x, block.y, block.width, block.height);
         }
