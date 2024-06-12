@@ -123,6 +123,12 @@ function update(){
         }
     }
 
+    // Next Level
+    if(blockCount == 0){
+        blockRows = Math.min(blockRows + 1, blockMaxRows);
+        createBlocks();
+    }
+
     // Score
     context.font = "20px sans-serif";
     context.fillText(score, 10, 25);
