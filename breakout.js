@@ -217,6 +217,7 @@ function resetGame(){
         velocityY : ballVelocityY
     }
     blockArray = [];
+    blockRows = 3;
     score = 0;
     createBlocks();
 }
