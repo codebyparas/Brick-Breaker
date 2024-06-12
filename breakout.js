@@ -125,6 +125,7 @@ function update(){
 
     // Next Level
     if(blockCount == 0){
+        score += 100*blockRows*blockColumns;  // Bonus Points :)
         blockRows = Math.min(blockRows + 1, blockMaxRows);
         createBlocks();
     }
